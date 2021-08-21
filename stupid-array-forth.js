@@ -1,6 +1,6 @@
 /* ---------------------------------------------------
 |               stupid-array-forth.js
-|        written by Garklein, 20/8/20 - 21/8/21
+|        written by Garklein, 20/8/21 - 21/8/21
 --------------------------------------------------- */
 
 const rlSync = require("readline-sync");
