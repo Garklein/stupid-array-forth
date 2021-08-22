@@ -116,7 +116,7 @@ const validNum = str => !isNaN(parseInt(str));
 const evalA = ts => {
 	let num = 0;
 	while (validNum(ts[0])) { s.push(parseInt(ts.shift())); num++; }
-	if (num) s.push(num);
+	if (num) { s.push(num); }
 }
 const eval = ts => {
 	while (ts.length) {
