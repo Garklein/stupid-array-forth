@@ -12,7 +12,7 @@ Numbers from the input will be grouped into arrays until a function is hit, or t
 
 ## Why it is so stupid (aka problems)
 - The stack gets polluted with tons of stuff that _you_ don't need, but the computer does.
-- Scalar operations feels clunky. You need to do `2 , 3 +` instead of the normal `2 3 +`.
+- Scalar operations feels clunky. You need to do `2 , 3 +` instead of the normal `2 3 +`. As suggested by [rak1507](https://github.com/rak1507), stranding could be replaced by a system where numbers between braces are arrays, and numbers on their own are scalars. However, I'm too lazy to implement it.
 - No good way to do multidimentional arrays. I supposed you could store them by putting another dimension on the stack, but this pollutes the stack even more. This also means that words like `iota` are unwieldy. If you write `1 2 iota`, now there are 2 arrays on the stack. If you want to drop all of them, you need to store the length of the original array (like `1 2 len swap iota`), and then use the horrible control flow to try to loop `drop` twice. If you want to operate on all the arrays you created with `iota`, you're out of luck (also see next point).
 - No good way to do operators. Actually, I lied. Execution tokens, and using braces for composition is a really cool aspect of concatenative languages, but I was too lazy to implement them.
 
