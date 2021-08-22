@@ -1,0 +1,25 @@
+body, html {
+	height: 100%;
+	margin: 0;
+}
+#container {
+	height: 99.2%;
+	width: 40%;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+#output {
+	height: 93%;
+	overflow: auto;
+}
+.input {
+	width: 95%;
+	text-align: center;
+}
+.log {
+	width: 95%;
+}
+#input {
+	width: 99%;
+}
