@@ -54,12 +54,12 @@ let w = { // words
 	"cat":   () => { const [a, n] = arrer(); const m = s.pop(); sp(a, m+n); },
 	"iota":  () => map1(n => { let r = [...Array(n).keys()]; r.push(n); return r; }, false),
 	"take":  () => { 
-		let [a, n] = arrer(), [[tn], _] = arrer(), r=false; if (tn < 0) { r=true; a.reverse(); tn = Math.abs(tn) }
+		let [[tn], _] = arrer(), [a, n] = arrer(), r=false; if (tn < 0) { r=true; a.reverse(); tn = Math.abs(tn) }
 		if (tn < n) { a = a.slice(0, tn); } else { for (let i = 0; i < tn-n; i++) { a.push(0) } }
 		if (r) { a = a.reverse(); } sp(a, tn);
 	},
 	"dropa":  () => { 
-		let [a, n] = arrer(), [[dn], _] = arrer(), r=false; if (dn < 0) { r=true; a.reverse(); dn = Math.abs(dn) }
+		let [[dn], _] = arrer(), [a, n] = arrer(), r=false; if (dn < 0) { r=true; a.reverse(); dn = Math.abs(dn) }
 		a = a.slice(dn); if (a.length) { if (r) { a = a.reverse(); } sp(a, n-dn); }
 	},
 
