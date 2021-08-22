@@ -103,7 +103,9 @@ let w = { // words
 			switch (tks[0]) { case ":": lvl++; break; case ";": lvl--; break; } 
 			if (lvl === 0) { w[ts[0]] = () => eval(cdr(ts)); return; } 
 			if (lvl === 1 && tks[0] === "$s") { const [a, _] = arrer(); ts.push(...a); tks.shift(); }
-			else { ts.push(tks.shift()); }
+			else if (lvl === 1 && tks[0] === "$fs") { 
+				const [[n], _] = arrer(); ts.push(...s.splice(s.length-n)); tks.shift(); 
+			} else { ts.push(tks.shift()); }
 		}
 		console.log("error: mismatched : and ;s"); return;
 	},
