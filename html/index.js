@@ -3,7 +3,7 @@ input.value = "";
 const output = document.getElementById("output");
 const log = a => {
 	const p = document.createElement("p");
-	const n = document.createTextNode(a || "<empty line>");
+	const n = document.createTextNode(a.length === 0 ? "<empty line>" : a);
 	p.classList = "log";
 	p.appendChild(n);
 	output.appendChild(p);
@@ -98,7 +98,7 @@ let w = { // words
 		const [[addr], _] = arrer(), [[n], ignore] = arrer(); for (let i = 0; i < n; i++) { m[addr-i] = s.pop(); }
 	},
 	"f@":    () => { const [[addr], _] = arrer(), [n, ignore] = arrer(); let a = []; gv(addr, n); },
-	"dump":  () => console.log(m),
+	"dump":  () => log(m),
 
 	"(":     ts => {
 		let lvl = 1; ts.shift();
